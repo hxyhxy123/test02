@@ -41,6 +41,6 @@ public interface StudentMapper {
     @Update("update student set name = #{name} where id<=#{id}")
     Boolean updateBatch(Long id,String name);
 
-    @Update("update student set name = #{name} where id>=#{id2}")
+    @Update("update student set name = #{name} where id=#{id2}")
     Boolean saveByCertain(Long id2,String name);
 }
