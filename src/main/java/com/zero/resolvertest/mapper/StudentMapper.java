@@ -29,7 +29,7 @@ public interface StudentMapper {
 
     @Delete("delete from student where id =#{id}")
     Boolean deleteById(Long id);
-    @Update("update student set name = #{name},sex = #{sex} ,teacher = #{teacher} where id >= #{id}")
+    @Update("update student set name = #{name},sex = #{sex} ,teacher = #{teacher} where id = #{id}")
     Boolean updateById(Student student);
 
     @Select("select name from student where id = #{id}")
