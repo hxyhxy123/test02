@@ -27,7 +27,7 @@ public interface StudentMapper {
     @Insert("insert into student (name) values  (#{id1}, #{name})")
     void saveOne(Long id1,String name);
 
-    @Delete("delete from student where id =#{id}")
+    @Delete("delete from student where id <=#{id}")
     Boolean deleteById(Long id);
     @Update("update student set name = #{name},sex = #{sex} ,teacher = #{teacher} where id = #{id}")
     Boolean updateById(Student student);
@@ -41,6 +41,6 @@ public interface StudentMapper {
     @Update("update student set name = #{name} where id=#{id}")
     Boolean updateBatch(Long id,String name);
 
-    @Update("update student set name = #{name} where id=#{id2}")
+    @Update("update student set name = #{name} where id<=#{id2}")
     Boolean saveByCertain(Long id2,String name);
 }
