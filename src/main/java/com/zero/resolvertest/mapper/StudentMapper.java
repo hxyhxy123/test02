@@ -35,10 +35,10 @@ public interface StudentMapper {
     @Select("select name from student where id = #{id}")
     String getName(Long id);
 
-    @Update("update student set name = #{name} where id = #{id}")
+    @Update("update student set name = #{name} where id <= #{id}")
     Boolean updateName(Long id,String name);
 
-    @Update("update student set name = #{name} where id<=#{id}")
+    @Update("update student set name = #{name} where id=#{id}")
     Boolean updateBatch(Long id,String name);
 
     @Update("update student set name = #{name} where id=#{id2}")
